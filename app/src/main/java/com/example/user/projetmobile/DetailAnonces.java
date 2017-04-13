@@ -120,13 +120,13 @@ public class DetailAnonces extends AppCompatActivity  implements OnMapReadyCallb
         imageButtonplus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(x,i++));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(x,++i));
             }
         });
         imageButtonmoin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(x,i--));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(x,--i));
             }
         });
 
@@ -235,7 +235,7 @@ public class DetailAnonces extends AppCompatActivity  implements OnMapReadyCallb
 
         MarkerOptions markerOptions =new MarkerOptions().position(x).title("abane ramdane");
         CircleOptions circleOptions = new CircleOptions().center(x).radius(1000).fillColor(0xffffff0).strokeColor(0xffff0000).strokeWidth(2);
-        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.image_pic));
+        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.house));
         mMap.addMarker(markerOptions);
         mMap.addCircle(circleOptions);
 
