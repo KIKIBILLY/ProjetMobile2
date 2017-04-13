@@ -14,25 +14,131 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    public static List<Logement> logementList=new ArrayList<>();
+    public static List<Logement> logementListprete=new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.setTitle("Recherche");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+        int[] covers = new int[]{
+                R.drawable.image1,
+                R.drawable.image2,
+                R.drawable.image3,
+                R.drawable.image4,
+                R.drawable.image5};
+        //----------------------------------------APPARTEMENT ------------------------------------------//
+        Logement a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3" , covers[0], "BEJAIA","Appartement",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3" ,covers[1],"ALGER","Appartement",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3" ,covers[2], "ORAN","Appartement",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3",covers[3],"BECHAR","Appartement",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3", covers[4], "ANNABA","Appartement",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+        //------------------------------------STUDIO----------------------------------------------------------//
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3", covers[0], "BEJAIA","studio",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3" , covers[0], "ALGER","studio",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3" ,covers[1],"ORAN","studio",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3" ,covers[2], "BECHAR","studio",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3",covers[3],"ANNABA","studio",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+        //--------------------------------------DUPLEX--------------------------------------------------------//
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3", covers[4], "ALGER","Duplex",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3" , covers[0], "ORAN","Duplex",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3" ,covers[1],"BECHAR","Duplex",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3" ,covers[2], "BEJAIA","Duplex",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3",covers[3],"ANNABA","Duplex",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+        //--------------------------------------VILLA--------------------------------------------------------//
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3", covers[4], "ORAN","Villa",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3" ,covers[1],"BECHAR","Villa",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3" ,covers[2], "BEJAIA","Villa",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3",covers[3],"ALGER","Villa",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3", covers[4], "ANNABA","Villa",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+
+        //--------------------------------------CABANON--------------------------------------------------------//
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3" ,covers[1],"BECHAR","Cabanon",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3" ,covers[2], "BEJAIA","Cabanon",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3",covers[3],"ALGER","Cabanon",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3", covers[4], "ORAN","Cabanon",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+
+        a = new Logement("Sidi ali labhar,Bejaia 06000.","1000000.00 DA","200m²", "3" ,covers[1],"ANNABA","Cabanon",covers[0],covers[1],covers[2],covers[0],covers[4]);
+        logementList.add(a);
+
+
+
+
+
+        //-----------------------------
+
+        for (int i=0;i<(logementList.size()-1);i++){
+            if (logementList.get(i).getRegion().equalsIgnoreCase("BEJAIA")){
+                logementListprete.add(logementList.get(i));
             }
-        });
+            else{
+                System.out.println("yes");
+            }
+        }
+
+        //-----------------------------gestion de la connexion au compte gmail -------------------------------//
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -43,16 +149,34 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
+
+
+
         Button bt1=(Button) findViewById(R.id.button);
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,ListeAnonces.class);
+                //Intent intent=new Intent(MainActivity.this,login.class);
                 startActivity(intent);
+
+
+
             }
         });
 
+
+
+
+
+
+
+
+
+
     }
+
 
     @Override
     public void onBackPressed() {
@@ -63,6 +187,11 @@ public class MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
+
+    public  static  ArrayList<Logement> getlist(){
+        return (ArrayList<Logement>) logementListprete;
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
