@@ -22,7 +22,7 @@ import butterknife.Bind;
 public class LoginActivity extends Activity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
-
+    private  TextView notnow;
     @Bind(R.id.input_email) EditText _emailText;
     @Bind(R.id.input_password) EditText _passwordText;
     @Bind(R.id.btn_login) Button _loginButton;
@@ -33,6 +33,7 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        notnow=(TextView)findViewById(R.id.link_notnow) ;
 
         _loginButton.setOnClickListener(new View.OnClickListener() {
 
@@ -51,6 +52,17 @@ public class LoginActivity extends Activity {
                 startActivityForResult(intent, REQUEST_SIGNUP);
 
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+            }
+        });
+        notnow.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // Start the Signup activity
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+
+
             }
         });
     }
